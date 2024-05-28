@@ -1,0 +1,81 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{packages/qx-auxiliary}
+
+
+
+% ==============================================================================
+% ---------------------- PAQUETE CREADO POR CARLOS CUXIM -----------------------
+%
+% Este paquete sirve para agregar funciones aparte. No tiene ningún uso salvo
+% ser una plantilla modificable.
+%
+% ==============================================================================
+
+
+
+% OPCIONES DE BEAMER --------------------------------------
+\setbeamertemplate{navigation symbols}{} %[qx] quita los botones que me cagan
+
+\setbeamersize{text margin left=1.25cm, text margin right=1.25cm}
+
+%\setbeamertemplate{footline}[page number]
+
+
+% Redefine como se ven los teoremas, lemas, etc.
+\setbeamertemplate{theorem begin}
+{%
+    \begin{\inserttheoremblockenv}
+    {%
+        \inserttheoremheadfont
+        \inserttheoremname
+        \ifx\inserttheoremaddition\@empty\else\ (\inserttheoremaddition)\fi%
+        \inserttheorempunctuation
+    }%
+}
+\setbeamertemplate{theorem end}{\end{\inserttheoremblockenv}}
+
+
+% SECCIONES NO NUMERADAS
+\renewcommand{\sectionname}{}
+\renewcommand{\insertsectionnumber}{}
+
+%\setbeamercolor{section name}{fg=white} % Hace lo mismo que los comandos anteriores, pero sin redefinir comandos
+
+
+% INNERTHEME
+    \useinnertheme{circles}
+    \setbeamertemplate{items}[balls]
+    \setbeamertemplate{blocks}[default]
+
+
+
+% FUENTES
+\usefonttheme[onlymath]{serif}
+
+%\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+    
+    
+% COLORES
+\setbeamercolor{title}{bg=qx-box-frame, fg=white}
+\setbeamercolor{frametitle}{bg=qx-box-frame, fg=white}
+\setbeamercolor{section title}{bg=qx-box-frame, fg=white}
+
+
+\setbeamercolor{block title}{bg=qx-box-frame, fg=white}
+\setbeamercolor{block body}{bg=qx-box-back}
+
+
+% Cambio de emph
+\setbeamercolor{emph}{fg=qx-box-frame}
+\let\oldemph=\emph
+\renewcommand{\emph}[1]{\oldemph{\usebeamercolor[fg]{emph}#1}}
+
+\newcommand{\Demo}{\emph{Demostración}\enspace}
+
+
+\setbeamertemplate{frametitle continuation}{}
+
+\newcommand{\wideitemspace}{\addtolength{\itemsep}{\baselineskip}}
+
+\endinput

@@ -1,0 +1,165 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{packages/qx-boxes}
+
+
+
+% ==============================================================================
+% ---------------------- PAQUETE CREADO POR CARLOS CUXIM -----------------------
+%
+% Este paquete contiene los macros relacionados con las cajas de ejercicios.
+% Contiene las definiciones de los entornos {exercises}, {exercises*}, {lema} y
+% {definition}.
+%
+% ==============================================================================
+
+
+
+% PAQUETES REQUERIDOS ----------------------------------------------------------
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+
+
+\RequirePackage{tcolorbox}
+  \tcbuselibrary{breakable}
+  \tcbuselibrary{skins}
+
+
+
+% COLORES ----------------------------------------------------------------------
+
+
+
+% CAJAS {exercise} Y {exercise*} -----------------------------------------------
+
+% ==========================================================
+% CONTADORES
+\newcounter{teo}
+\newcommand{\numej}{\refstepcounter{teo}\theteo}
+
+\newcounter{lema}
+\newcommand{\numek}{\refstepcounter{lema}\thelema}
+
+\newcounter{cor}
+\newcommand{\numer}{\refstepcounter{cor}\thecor}
+% ==========================================================
+
+
+% ======================================================================================
+% TCOLORBOX
+\newtcolorbox{teo}[1][\numej]{title={Teorema #1.}, colback=blue!5, colframe=blue!35!black, fonttitle=\bfseries, breakable, parbox=false, before skip= \bigskipamount, after skip = \medskipamount}
+
+\newtcolorbox{teocont}{colback=blue!5, colframe=blue!50!black, breakable, parbox=false}
+
+\newtcolorbox{lema}[1][\numek]{title={Lema #1.}, colback=blue!5, colframe=blue!35!black, fonttitle=\bfseries, breakable, parbox=false, before skip= \bigskipamount, after skip = \medskipamount}
+
+\newtcolorbox{lemacont}{colback=blue!5, colframe=green!50!black, breakable, parbox=false}
+
+\newtcolorbox{cor}[1][\numer]{title={Corolario #1.}, colback=blue!5, colframe=blue!35!black, fonttitle=\bfseries, breakable, parbox=false, before skip= \bigskipamount, after skip = \medskipamount}
+
+\newtcolorbox{corcont}{colback=blue!5, colframe=blue!50!black, breakable, parbox=false}
+% ======================================================================================
+
+
+% Contador
+\newcounter{qxTheorem}
+
+% Definición de la caja
+\newtcolorbox{theo}[1][\numej]{
+  title       = {Teorema #1.},
+  colframe    = qx-box-frame,
+  colback     = qx-box-back,
+  fonttitle   = \bfseries,
+  parbox      = false,
+  before skip = \bigskipamount,
+  after skip  = \medskipamount,
+  breakable
+}
+
+
+% Caja auxiliar ejercicios
+\newtcolorbox{lemma-box}[1][]{
+  title = {#1},
+  colframe    = qx-box-frame,
+  colback     = qx-box-back,
+  fonttitle   = \bfseries,
+  parbox      = false,
+  before skip = \bigskipamount,
+  after skip  = \medskipamount,
+  breakable
+}
+
+
+% CAJAS {definition} Y {definition*} -------------------------------------------
+
+% Colores de las cajas
+    \colorlet{qx-box-frame}{blue!50!black}
+    \colorlet{qx-box-back}{blue!5}
+    
+
+% Definición de la caja sin numeración
+\newtcolorbox{definition}[1][\relax]{
+  title       = {Definición\ifx#1\relax.\else\space{\normalfont(#1)}.\fi},
+  coltitle    = black,
+  fonttitle   = \large\bfseries,
+  colback     = white,
+  colframe    = qx-box-frame,
+  parbox      = false,
+  parbox      = false,
+  top         = 1.5mm+\tcboxedtitleheight/4,
+  sharp corners,
+  breakable,
+  enhanced,
+  attach boxed title to top left = {yshift = -\tcboxedtitleheight/2, xshift = 4mm-0.5mm},
+  boxed title style = {
+                          colback=white,
+                          left=0.5mm,right=0.5mm,
+                          boxsep=1mm,
+                          frame empty
+                        }
+}
+
+
+% Caja de ejemplos
+\newtcolorbox{example}{
+  title={Ejemplo.},
+  colback = white,
+  %frame hidden,
+  colframe=white,
+  coltitle=black,
+  fonttitle   = \bfseries,
+  %top = 0mm,
+  bottom = 0mm,
+  boxsep = 0mm,
+  enhanced,
+  borderline west={2mm}{0pt}{qx-box-frame},
+  parbox = false,
+  breakable
+}
+
+
+% ENTORNOS {lema} Y {lema*} ----------------------------------------------------
+
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+
+
+
+% FUNCIONES AUXILIARES
+
+\newcounter{proofstep}
+\newcommand*{\printstep}{\refstepcounter{proofstep}\theproofstep}
+
+\newcommand*{\proofstep}{\medskip\noindent\textbf{Paso \printstep.}}
+
+
+% ENTORNO {answer} -------------------------------------------------------------
+
+\newenvironment{answer}[1][Solución]{\begin{proof}[#1]\let\qed\relax}{\end{proof}}
+\newcommand{\manualproof}{\emph{Demostración.}\space}
+
+
+\endinput
