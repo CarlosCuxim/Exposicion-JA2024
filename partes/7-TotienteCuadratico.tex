@@ -1,0 +1,170 @@
+\begin{frame}
+  \begin{center}\fontsize{20}{24}\selectfont
+    ¿Podemos generalizar el resultado a los anillos de enteros?
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}\fontsize{20}{24}\selectfont
+    Elementos de $\Z$ $\implies$ Ideales de $\cO_K$
+  \end{center}
+\end{frame}
+
+\begin{frame}{Congruencia en ideales}
+  \begin{definition}
+    Sean $\alpha, \beta \in \cO_K$ e $\cA$ un ideal de $\cO$ decimos que $\alpha$ y $\beta$ son congruentes módulo $\cA$ si $\alpha-\beta \in \cA$. Escribimos
+    \[
+        \alpha \eqv \beta \pmod{\cA}.
+    \]
+\end{definition}
+
+\pause\bigskip
+
+\begin{definition}
+  Denotamos como $[\alpha]_\cA = \alpha+\cA$ a la clase lateral y como $\cO_K/\cA$ al conjunto de clases laterales.
+\end{definition}
+\end{frame}
+
+
+\begin{frame}{Congruencia en ideales}
+  \begin{proposition}
+    El conjunto $\cO_K/\cA$ será un anillo finito con las siguientes operaciones.
+    \[
+    [\alpha]_\cA + [\beta]_\cA = [\alpha+\beta]_\cA
+    \Eqand
+    [\alpha]_\cA [\beta]_\cA = [\alpha\beta]_\cA.
+    \]
+\end{proposition}
+\end{frame}
+
+\begin{frame}{Anillo cociente un ideal}
+  \begin{proposition}
+    En el anillo de enteros módulo $m$ satisface las siguientes propiedades.
+    \pause
+    \begin{itemize}[<+->]
+        \item $\cO_K/\cA$ es un dominio entero si y solo si $\cA$ es primo.
+        \bigskip
+
+        \item Los ideales primos de $\cO_K/\cA$ son de la forma $\cP/\cA$ donde $\cP \mid \cA$ es primo.
+    \end{itemize}
+\end{proposition}
+
+\pause\bigskip
+\emph{Sin embargo} no hay una forma \emph{sencilla} de determinar $(\cO_K/\cA)^\times$.
+\end{frame}
+
+
+\begin{frame}{La función $\phi$ en $\cO_K$}
+  \begin{definition}
+    Sea $\cA$ un ideal de $\cO_K$ definimos $\Phi_K(\cA) = (\cO/\cA)^\times$ y $\varphi_K(\cA) = \#\Phi_K(\cA)$.
+  \end{definition}
+
+  \pause\bigskip
+Es posible de calcular $\varphi_K(\cA)$ de manera ``sencilla''.
+\end{frame}
+
+
+\begin{frame}{La norma de un ideal}
+  \begin{definition}
+    Llamamos la ``norma'' de $\cA$ al número $\rN(\cA) = \#(\cO_K/\cA)$.
+\end{definition}
+
+\pause\bigskip
+
+\begin{proposition}
+    Sean $\cA$ y $\cB$ ideales de $\cO_K$ y $\cP$ un ideal primo de $\cO_K$ tal que $\cP \mid (p)$, entonces
+    \begin{enumerate}
+        \item $\rN(\cA\cB)=\rN(\cA)\rN(\cB)$.
+        \bigskip
+
+        \item Existe $f\in\N$ tal que $\rN(\cP) = p^f$ \pause ($f$ recibe el nombre de \emph{grado de inercia}).
+    \end{enumerate}
+\end{proposition}
+\end{frame}
+
+
+\begin{frame}{La función $\phi$ en $\cO_K$}
+  \begin{proposition}
+    Sean $\cA$ y $\cB$ ideales de $\cO_K$ primos relativos y $\cP \mid (p)$ un ideal primo, entonces
+    \pause
+    \begin{itemize}[<+->]
+        \item $\Phi_k(\cA\cB) = \Phi_K(\cA) \times \Phi_K(\cA)$.
+        \bigskip
+
+        \item $\varphi_K(\cP^k) = \rN(\cP)^k-\rN(\cP)^{k-1} = p^{f(k-1)}(p^f-1) $.
+        \bigskip
+        
+        \item $\ds \varphi_K(\cA) = \rN(\cA) \prod_{p\mid n}\paren{1-\frac{1}{\rN(\cP)}}$.
+    \end{itemize}
+\end{proposition}
+\end{frame}
+
+
+\begin{frame}{La función $\phi$ en $\cO_K$}
+  \begin{theorem}
+    Si $[\alpha]_\cA \in \Phi_K(\cA)$ entonces
+    \[
+         \alpha^{\varphi_K(\cA)} \eqv 1 \pmod{\cA}.
+    \]
+\end{theorem}
+\end{frame}
+
+
+
+\begin{frame}{La función $\phi$ en campos cuadráticos}
+  En el caso que $K = \Q(\sqrt{d})$ sea una extensión cuadrática de $\Q$, por simplicidad escribiremos simplemente
+\[
+    \Phi_K = \Phi_d \Eqand
+    \varphi_K = \varphi_d.
+\]
+\end{frame}
+
+
+\begin{frame}{La función $\phi$ en campos cuadráticos}
+  \begin{theorem}
+    Sea $K = \Q(\sqrt{d})$ un campo cuadrático y $\cP$ un ideal primo de la forma $\cP = (p)/\cP'$, entonces la aplicación $\Z/p^k\Z \to \cO_d/\cP^k$ dada por $[a]_{p^k} \mapsto [a]_{\cP^k}$ es un isomorfismo. De esta forma
+    \begin{itemize}
+        \item Si $p = 2$ entonces tenemos que $\Phi_d(\cP) = \inner{1}$, $\Phi(\cP^2) = \inner{3} \cong \Z_2$, mientras que si $k>2$ entonces
+        \[
+            \Phi(\cP^k) = \inner{-1, 5} \cong \Z_2 \times \Z_{2^{k-2}}.
+        \]
+
+        \item Si $p > 2$ entonces existe un elemento primitivo $g$ módulo $p$ tal que
+        \[
+            \Phi(\cP^k) = \inner{g} \cong \Z_{p^k-p^{k-1}}.
+        \]
+    \end{itemize}
+\end{theorem}
+\end{frame}
+
+
+
+\begin{frame}{La función $\phi$ en campos cuadráticos}
+  \begin{theorem}
+    Sea $\cP$ un ideal primo tal que $\cP = (p)$ con $p>2$, entonces
+    \[
+    \Phi(\cP^k) = \inner{1+p\omega} \times \inner{g^{p-1}} \times \inner{\beta^{p^{k-1}}}.
+    \]
+    Donde $\cO_d = \Z[\omega]$, $g$ es un elemento primitivo módulo $p$ y $\beta$ es un elemento primitivo módulo $\cP$. Sus ordenes respectivamente son $p^{k-1}$, $p^{k-1}$ y $p^2-1$, por ende
+    \[
+        \Phi(\cP^k) \cong \Z_{p^{k-1}} \times \Z_{p^{k-1}} \times \Z_{p^2-1}.
+    \]
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}{La función $\phi$ en campos cuadráticos}
+  \begin{theorem}
+    Sea $\cP$ un ideal primo tal que $\cP = \sqrt{(p)}$ con $p>3$, entonces
+    \[
+    \Phi(\cP^k) = \inner{1+\sqrt{d}} \times \inner{g}.
+    \]
+    Donde $g$ es un elemento primitivo módulo $p$. Si $k = 2m$ o $k=2m+1$ entonces el orden de $1+\sqrt{d}$ será $p^m$, mientras que el orden de $g$ será $p^m-p^{m-1}$ si $k$ es par o $p^{m+1}-p^m$ si $k$ es impar. De este modo
+    \[
+        \Phi(\cP^k) = \begin{cases}
+            \Z_{p^m} \times \Z_{p^m - p^{m-1}} & k = 2m \\
+            \Z_{p^m} \times \Z_{p^{m+1} - p^m} & k = 2m+1.
+        \end{cases}
+    \]
+\end{theorem}
+\end{frame}

@@ -1,0 +1,242 @@
+\section{Los enteros}
+
+\begin{frame}{}
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[text width=6.5cm, rectangle, right=10pt] 
+      at (current page.west) 
+      {\fontsize{16}{20}\selectfont
+      \emph{``La matemática es la \linebreak reina de las ciencias,
+      pero la aritmética es la reina de las matemáticas.''}
+      
+      \bigskip
+      \hfill --Carl F. Gauss
+      };
+
+    \node[below left=-6pt] at (current page.north east) {\includegraphics[height=11cm]{img/gauss.jpg}};
+  \end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+  \begin{center}\fontsize{20}{24}\selectfont
+    ¿Que hace de especial a los enteros?
+  \end{center}
+\end{frame}
+
+
+
+
+\begin{frame}{Los enteros}
+  Los enteros son un \emph{dominio entero}. Satisfacen que
+  \begin{enumerate}[<+->]
+    \item Tiene suma $+$, resta $-$, producto $\cdot$ y elementos neutros ($1$ y $0$).
+    \item El orden de los factores no altera la suma o el producto.
+    \begin{align*}
+      a + (b + c) &= (a + b) + c    &    a \cdot (b \cdot c) &= (a \cdot b) \cdot c \\
+      a + b &= b + a    &    a \cdot b &= b \cdot a.
+    \end{align*}
+    \item El producto se distribuye.
+    \[
+      a \cdot ( b + c) = a\cdot b + a\cdot c
+    \]
+  \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{Los enteros}
+  Los enteros son un \emph{dominio entero}. Satisfacen que
+  \begin{enumerate}\setcounter{enumi}{3}
+    \item Sin divisores de cero.
+      \[
+        ab = 0 \implies a = 0 \eqor b = 0.
+      \]
+  \end{enumerate}
+
+  \pause
+  La propiedad 4 nos permite resolver ecuaciones a través de la factorización.
+  \[
+    (x-1)(x+1) = 0 \implies x = 1, -1.
+  \]
+
+  \pause
+  \begin{definition}
+    Si $A$ satisface 1-3 es un \emph{anillo} si también satisface 4 es un \emph{dominio entero}.
+  \end{definition}
+\end{frame}
+
+
+
+
+\begin{frame}{Ejemplos de anillos que no son dominios enteros}
+  \begin{itemize}[<+->]
+    \item $\R^2$ con las operaciones
+      \[
+        (a,b) + (c,d) = (a+c,b+d)     \Eqand
+        (a,b) \cdot (c,d) = (ac,bd).
+      \]
+
+    \item El conjunto de funciones $f\colon X \to \R$ con operaciones
+    \[
+        (f+g)(x) = f(x) + g(x)     \Eqand
+        (fg)(x) = f(x) + g(x) .
+    \]
+
+    \item El conjunto potencia $\cP(X)$ con las operaciones
+    \[
+      A+B = (A \cup B) \sm (A \cap B)     \Eqand
+      AB = A \cap B.
+    \]
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Divisibilidad}
+  \begin{definition}
+    Decimos que $a \mid b$ si existe $k$ tal que $ak = b$.
+  \end{definition}
+
+  \pause\bigskip
+  La divisibilidad ``descompone'' elementos en partes mas simples.
+
+  \pause\bigskip
+  ¿Existen elementos que no se puedan ``descomponer''?
+\end{frame}
+
+\begin{frame}{Divisibilidad}
+  \begin{definition}
+    \begin{enumerate}[<+->]
+      \item Decimos que $u$ es una unidad si $u \mid 1$.
+      
+      \bigskip
+
+      \item Llamamos a $c$ irreducible si $c = ab$ implica que $a$ o $b$ es una unidad.
+      
+      \bigskip
+
+      \item Llamamos a $p$ un primo si $p \mid ab$ implica que $p \mid a$ o $p \mid b$.
+    \end{enumerate}
+  \end{definition}
+
+
+  \pause\bigskip
+  Al conjunto de unidades de un dominio entero $D$ lo denotaremos como $D^\times$.
+\end{frame}
+
+
+\begin{frame}{Divisibilidad}
+  \begin{proposition}
+    En los enteros las únicas unidades son $1$ y $-1$. Un elemento es primo si y solo si es irreducible.
+  \end{proposition}
+\end{frame}
+
+\begin{frame}{Divisibilidad}
+  \begin{theorem}[Teorema fundamental de la aritmética]
+    Sea $a \in \Z$ entonces existe unos únicos primos $p_1, \cdots, p_r \in \Z$ tales que
+    \[
+      a = \pm p_1^{v_1} \cdots p_r^{v_r}
+    \]
+  \end{theorem}
+
+  \pause\bigskip
+  Esta propiedad significa que $\Z$ es un dominio de \emph{factorización única}.
+\end{frame}
+
+
+\begin{frame}{Divisibilidad}
+  \begin{definition}
+    Decimos que $D$ es un dominio de \emph{factorización única} si para todo $a \in D$ existe una unidad $u$ y irreducibles $p_1, \cdots, p_r \in \Z$, únicos salvo orden, tales que
+    \[
+      a = u p_1^{v_1} \cdots p_r^{v_r}
+    \]
+  \end{definition}
+\end{frame}
+
+
+\begin{frame}{Ideales}
+  \begin{definition}
+  Un ideal es un conjunto $\cI$ tal que satisface las siguientes propiedades
+  \begin{itemize}[<+->]
+    \item $0 \in \cI$.
+    
+    \item $a,b \in \cI$ entonces $a + b \in \cI$.
+    
+    \item Para todo $r$ y $a \in \cI$ se tiene que $ar \in \cI$.
+  \end{itemize}
+  \end{definition}
+\end{frame}
+
+\begin{frame}{Ideales}
+  \begin{theorem}
+    Sea $\cI$ un ideal de $\Z$ entonces existe $k \in \Z$ tal que
+    \[
+      \cI = (k) \coloneqq \{ka : a \in \Z\}.
+    \]
+  \end{theorem}
+
+  \pause\bigskip
+  Esta propiedad significa que $\Z$ es un dominio de \emph{ideales principales}.
+\end{frame}
+
+
+\begin{frame}{Ideales}
+  \begin{proposition}
+    Sean $a,b \in \Z$ entonces $(a,b) = \{ ar + bs : r,s \in \Z \}$ es un ideal, más aun se tiene que
+    \[
+      (a,b) = \bigl(\mcd(a,b)\bigr)
+    \]
+  \end{proposition}
+\end{frame}
+
+
+\begin{frame}{Algoritmo euclideano}
+  \begin{theorem}
+    Sean $a,b \in \Z$ con $b \neq 0$, entonces existen $q,r \in \Z$ tal que
+    \[
+      a = bq+r
+      \Eqand
+      0 \leq r < \abs{b}.
+    \]
+  \end{theorem}
+
+  \pause\bigskip
+  Esta propiedad significa que $\Z$ es un dominio \emph{euclideano}.
+\end{frame}
+
+
+\begin{frame}{Algoritmo euclideano}
+  \begin{definition}
+    Decimos que $D$ es un dominio \emph{euclideano} si existe una función $N\colon D \sm \{0\} \to \N$ tal que para todo $a,b \in D$ (con $b \neq 0)$ se cumple que existen $q,r \in D$ tales que
+    \[
+      a = bq + r \Eqand
+      r = 0 \eqor N(r) < N(b).
+    \]
+  \end{definition}
+
+  \pause\bigskip
+  En los enteros la función $N$ es el valor absoluto usual.
+\end{frame}
+
+
+
+\begin{frame}{Propiedades de los enteros}
+  Recapitulando tenemos que los enteros satisfacen que:
+  \begin{itemize}[<+->]
+    \item Es un dominio entero. \medskip
+    \item Es un dominio de factorización única. \medskip
+    \item Es un dominio de ideales principales. \medskip
+    \item Es un dominio euclideano. \medskip
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Propiedades de los enteros}
+  \begin{theorem}
+    Se tienen las siguientes inclusiones
+    \[
+      \text{D. euclideano} \subseteq \text{D. de ideales principales} \subseteq \text{D. de factorización única} \subseteq \text{D. entero}
+    \]
+
+    Además, en los dominios de factorización única, un elemento es primo si y solo si es irreducible.
+  \end{theorem}
+\end{frame}

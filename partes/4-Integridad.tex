@@ -1,0 +1,95 @@
+\begin{frame}{Integridad}
+  \begin{definition}
+    Sea $\alpha \in \C$, decimos que es íntegro si existe un polinomio mónico $f \in \Z[X]$ tal que $f(\alpha) = 0$. En otras palabras, si satisface una ecuación de la forma
+  \[
+    \alpha^n + a_{n-1}+\cdots + a_1\alpha + a_0 = 0,\qquad a_i \in \Z.
+  \]
+  \end{definition}
+
+  \pause\bigskip Sin embargo, no es tan sencillo como agregar un elemento íntegro a $\Z$.
+\end{frame}
+
+
+\begin{frame}{Extensiones finitas}
+  \begin{definition}
+    Llamaremos a $K$ una extensión finita de $\Q$ si existe algún $\theta \in \C$ integro tal que
+  \[
+    K = \Q(\theta) = \{f(\theta) : f \in\Q[X]\}.
+  \]
+  \end{definition}
+\end{frame}
+
+
+
+\begin{frame}{Anillo de enteros}
+  \begin{definition}
+    Sea $K$ una extensión finita de $\Q$, definiremos el \emph{anillo de enteros de $K$} como
+    \[
+      \cO_K = \{ \alpha \in K : \alpha \ \text{es íntegro} \}.
+    \]
+  \end{definition}
+\end{frame}
+
+
+\begin{frame}{Ejemplos}
+  \begin{itemize}[<+->]
+    \item Si $K = \Q(i)$ entonces $\cO_K = \Z[i]$.
+    \bigskip
+    
+    \item Si $K = \Q(\sqrt{-5})$ entonces $\cO_K = \Z[\sqrt{-5}]$.
+    \bigskip
+    
+    \item $\Z[1/n]$ no es un anillo de enteros, ya que $1/n$ no es íntegro.
+    \bigskip
+
+    \item Si $K = \Q(\sqrt{-3})$ entonces $\Z[\sqrt{-3}] \subsetneq \cO_K$ de echo
+    \[
+      \cO_K = \Z(\omega) \qquad\text{donde}\qquad \omega = \frac{-1+i\sqrt{3}}{2}
+    \]
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Anillo de enteros}
+  \begin{itemize}[<+->]
+    \item Si $K = \Q(\theta)$ no necesariamente $\cO_K = \Z[\theta]$.
+    \bigskip
+
+    \item Sin embargo, existirán algunos $\alpha_1,\cdots,\alpha_n$ tales que
+    \[
+      \cO_K = \Z[\alpha_1,\ldots,\alpha_n] = \alpha_1\Z + \cdots +\alpha_n\Z.
+    \]
+
+    \item $\cO_K$ es de factorización única si y solo si $\cO_K$ es de ideales principales.
+    \bigskip
+
+    \item $\cO_K$ \emph{no necesariamente} es de factorización única.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Anillo de enteros}
+  \begin{definition}
+    Sea $\cP$ un ideal, decimos que es \emph{primo} si satisface que
+    \[
+      ab \in \cP \implies a \in \cP \eqor b \in \cP.
+    \]
+  \end{definition}
+
+  \pause\bigskip
+  \begin{definition}
+    Sean $\cA$ y $\cB$ ideales, definimos su producto como el ideal
+    \[
+      \cA\cB = \Bigl\{ \sum_{i=1}^n a_i b_i :  a_i \in \cA,  b_i \in \cB \Bigr\}.
+    \]
+  \end{definition}
+\end{frame}
+
+
+\begin{frame}{Anillo de enteros}
+  \begin{theorem}
+    Sea $\cO_K$ un anillo de enteros. Para todo ideal $\cA$ existen únicos $\cP_1, \ldots, \cP_r$ ideales primos (salvo orden) tales que
+    \[
+      \cA = \cP_1^{v_1} \cdots \cP_r^{v_r}
+    \]
+  \end{theorem}
+\end{frame}

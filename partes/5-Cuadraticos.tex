@@ -1,0 +1,107 @@
+\begin{frame}{Enteros cuadráticos}
+  \begin{definition}
+    Decimos que $K$ es una extensión cuadrática de $\Q$ si es de la forma $K = \Q(\sqrt{d})$ donde $d$ es un entero libre de cuadrados.
+  \end{definition}
+\end{frame}
+
+\begin{frame}{Enteros cuadráticos}
+  \begin{theorem}
+    Sea $K = \Q(\sqrt{d})$ una extensión cuadrática, entonces su anillo de enteros es
+    \[
+      \cO_K \coloneqq \cO_d = \Z[\omega] = \{ a + b\omega : a,b \in \Z \} 
+    \]
+    donde
+    \[
+      \omega = \begin{cases}
+        \sqrt{d} &\text{si} \ d = 4k+2 \ \text{o} \ d = 4k+3, \\
+        (1+\sqrt{d})/2 &\text{si} \ d = 4k+1.
+      \end{cases}
+    \]
+  \end{theorem}
+\end{frame}
+
+
+\begin{frame}{Primo en los enteros cuadráticos}
+  \begin{theorem}
+    Sea $p \in \Z$ primo, entonces $(p)$ se puede factorizar en $\cO_d$ de 3 formas distintas.
+    \pause\bigskip
+    \begin{itemize}[<+->]
+      \item \emph{p se escinde}:
+        \[
+          (p) = \cP\cP' \qquad \cP \neq \cP'.
+        \]
+
+      \item \emph{p se es inerte}: $(p)$ es un ideal primo.
+      \bigskip
+
+      \item \emph{p se ramifica}:
+      \[
+        (p) = \cP^2.
+      \]
+    \end{itemize}
+  \end{theorem}
+\end{frame}
+
+
+
+\begin{frame}{Primo en los enteros cuadráticos}
+  \begin{theorem}
+    Sea $p > 2$ primo, entonces $(p)$ se puede factorizar en $\cO_d$ como.
+    \pause\bigskip
+    \begin{itemize}[<+->]
+      \item $(p) = \cP\cP'$ si y solo si \emph{$p \mid c^2 - d$ para alguna $c$} y en este caso
+      \[
+        \cP = (p, \sqrt{d}+c) \Eqand \cP = (p, \sqrt{d} - c)
+      \]
+
+      \item $(p)$ es un ideal primo si y solo si \emph{no existe $c$ tal que $p \mid c^2 - d$}
+      \bigskip
+
+      \item $(p) = \cP^2$ si y solo si $p \mid d$, en este caso
+      \[
+        \cP = (p, \sqrt{d}).
+      \]
+    \end{itemize}
+  \end{theorem}
+\end{frame}
+
+
+\begin{frame}{Primo en los enteros cuadráticos}
+  \begin{theorem}
+    Para el caso de $p = 2$ tenemos que
+    \pause\bigskip
+    \begin{itemize}[<+->]
+      \item Si $d = 4k+2$ entonces $(2) = \cP^2$ donde
+      \[
+        \cP = (2, \sqrt{d})
+      \] 
+
+      \item Si $d = 4k+3$ entonces $(2) = \cP^2$ donde
+      \[
+        \cP = (2, 1+\sqrt{d})
+      \]
+      
+      \item Si $d = 8k+1$ entonces $(2) = \cP \cP'$ donde
+      \[
+        \cP = (2, \sqrt{d}) \Eqand \cP = (2, -\sqrt{d})
+      \] 
+
+      \item Si $d = 8k+5$ entonces $(2)$ es un ideal primo.
+    \end{itemize}
+  \end{theorem}
+\end{frame}
+
+
+
+\begin{frame}{Ejemplo}
+  En $\cO_{-14}$ tenemos que
+  \begin{align*}
+    (2) &= \cP_2^2 & \cP_2 &= (2, \sqrt{-14}) \\
+    (3) &= \cP_3 \cP_3'  & \cP_3 &= (2, \sqrt{-14}+1) \\
+                      &  & \cP_3' &= (2, \sqrt{-14}-1) \\
+  \end{align*}
+  De este modo
+  \[
+    (12) = (2)^2 (3) = \cP^4 \cP_3 \cP_3'.
+  \]
+\end{frame}

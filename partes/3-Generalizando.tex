@@ -1,0 +1,135 @@
+\begin{frame}{Generalizando los enteros}
+  Antes de generalizar tenemos que responder
+  \begin{itemize}[<+->]
+    \item ¿Dónde vamos a generalizarlo?\bigskip
+    
+    \item ¿Por qué queremos generalizarlo? \bigskip
+     
+    \item ¿Cómo vamos a generalizarlo? \bigskip
+    
+    \item ¿Qué propiedades vamos a preservar? \bigskip
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{¿Cómo?}
+  Lo más sencillo es ``agregar cosas'' a los enteros. Es decir, tomar
+  \[
+    \Z[x_1, \ldots, x_n] = \{ f(x_1, \ldots, x_n) : f \ \text{es un polinomio de coeficientes enteros} \}
+  \]
+  donde $x_1, \ldots, x_n$ son elementos de ``algún conjunto''.
+
+  \pause\bigskip
+
+  En los enteros gausianos estamos agregando $i = \sqrt{-1}$.
+\end{frame}
+
+
+\begin{frame}{Enteros de Eisenstein}
+  Si $\omega = (-1+i\sqrt{3})/2$ entonces $\Z[\omega]$ son los \emph{enteros de Eisenstein}.
+
+  \pause\bigskip
+  \begin{itemize}[<+->]
+    \item $\Z[\omega] = \{ a+b\omega : a,b \in \Z \}$.
+    \bigskip
+    
+    \item Las unidades son $\Z[\omega]^\times = \{ 1, \omega, \omega^2, -1, -\omega, -\omega^2 \}$.
+    \bigskip
+
+    \item Es un dominio euclideano usando $N(a+b\omega) = a^2 -ab + b^2$.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Enteros de Eisenstein}
+  Los primos de $\Z[\omega]$ (salvo multiplicación por una unidades) son
+  \begin{itemize}[<+->]
+    \item Los primos enteros de la forma $3k+2$.
+    \bigskip
+    
+    \item Los factores $\pi, \pi' \in \Z[\omega]$ de un primo enteros $p$ tal que
+    \[
+      p = \pi \pi' \Eqand p = 3k+2.
+    \]
+
+    \item El elemento $1+2\omega$.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Localización por un entero}
+  Consideremos $\Z[1/n]$ donde $n \in \Z$. Es llamado la \emph{localización de $\Z$ en $n$}.
+
+  \pause\bigskip
+  \begin{itemize}[<+->]
+    \item $\Z[1/n] = \{a/s \in \Q : s = n^k, k \in\Z \}$.
+    \bigskip
+
+    \item Las unidades son $\Z[1/n] = \{a/s \in \Q : a \mid n^k, k \in\Z \}$.
+    \bigskip
+
+    \item Es un dominio euclideano.
+    \bigskip
+    
+    \item Los primos son los $p \in \Z$ tales que $p \nmid n$.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Polinomios enteros}
+  Si agregamos una variable $X$ a $\Z$ obtenemos a los polinomios enteros
+
+  \pause\bigskip
+  \begin{itemize}[<+->]
+    \item Las unidades son $1$ y $-1$.
+    \bigskip
+
+    \item Es un dominio de factorización única, pero no de ideales principales.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Dominio sin factorización única}
+  Consideremos $\Z[\sqrt{-5}]$ se cumple que
+
+  \pause\bigskip
+  \begin{itemize}[<+->]
+    \item $\Z[\sqrt{-5}] = \{a + b\sqrt{-5} : a,b \in \Z\}$.
+    \bigskip
+
+    \item Las unidades son $\Z[\sqrt{-5}]^\times = \{-1, 1\}$.
+    \bigskip
+
+    \item No es de factorización única, ya que
+      \[
+        6 = (1+\sqrt{-5})(1-\sqrt{-5}) = 2 \cdot 3.
+      \]
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Generalizando los enteros}
+  \begin{itemize}
+    \item<1-> ¿Dónde vamos a generalizarlo?
+    
+    \uncover<2->{\emph{Sobre los complejos}}
+    \bigskip
+    
+    \item<3-> ¿Por qué queremos generalizarlo?
+
+    \uncover<4->{\emph{Para resolver ecuaciones diofánticas}}
+    \bigskip
+
+    \item<5-> ¿Cómo vamos a generalizarlo?
+    
+    \uncover<6->{\emph{Agregando elementos ``especiales'' a los enteros}}
+    \bigskip
+
+    \item<7-> ¿Qué propiedades vamos a preservar?
+    
+    \uncover<8->{\emph{Integridad}}
+  \end{itemize}
+\end{frame}

@@ -1,0 +1,162 @@
+\begin{frame}
+  \begin{center}\fontsize{20}{24}\selectfont
+    La función totiente de Euler
+  \end{center}
+\end{frame}
+
+\begin{frame}{Congruencia}
+  \begin{definition}
+    Sea $m>0$ un natural y $a,b \in \Z$ decimos que $a$ y $b$ son congruentes módulo $m$ si $m \mid a-b$. Lo denotamos como:
+    \[
+        a \eqv b \pmod{m}.
+    \]
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+  Denotamos la clase lateral de $a$ (módulo $m$), como
+  \[
+    [a]_m = a + m\Z \coloneqq = \{ a + mk : k \in \Z\}
+      = \{ b : b\eqv a \pmod{m} \}.
+  \]
+  
+  \pause
+
+  Al conjunto de clases laterales lo llamamos el \emph{cociente módulo $m$}.
+  \[
+      \Z_m = \Z/m\Z \coloneqq  \{ a + m\Z : a \in \Z\}.
+  \]
+
+\end{definition}
+\end{frame}
+
+\begin{frame}{Anillo de enteros módulo $m$}
+  \begin{proposition}
+    El cociente $\Z_m$ forma un anillo finito dada las siguientes operaciones
+    \[
+        [a]_m + [b]_m = [a+b]_m
+            \Eqand
+        [a]_m [b]_m = [ab]_m.
+    \]
+\end{proposition}
+\end{frame}
+
+
+\begin{frame}{Anillo de enteros módulo $m$}
+  \begin{proposition}
+    En el anillo de enteros módulo $m$ satisface las siguientes propiedades.
+    \pause
+    \begin{itemize}[<+->]
+        \item $\Z_m =  \{ [0]_m, [1]_m, \ldots, [m-1]_m \}$.
+        \bigskip
+        
+        \item $\Z_m$ es un dominio entero si y solo si $m$ es primo.
+        \bigskip
+        
+        \item $\Z_m^\times = \{ [a]_m : \mcd(a,m)=1. \} $. 
+        \bigskip
+        
+        \item Los ideales primos de $\Z_m$ son de la forma $([p]_m)$ donde $p \mid n$ es primo. 
+    \end{itemize}
+\end{proposition}
+\end{frame}
+
+
+\begin{frame}{Función totiente de Euler}
+  \begin{definition}
+    Sea $m>0$ definimos la función $\phi$ totiente de Euler como
+    \[
+        \phi(n) = \# \Z_m^\times = \# \{ a : 0\leq a < m \eqand \mcd(a,n)=1\}.
+    \]
+\end{definition}
+\end{frame}
+
+
+\begin{frame}{Función totiente de Euler}
+  \begin{proposition}
+    Sean $a,b \in \Z$ primos relativos y $p$ un primo, entonces
+    \pause
+    \begin{itemize}[<+->]
+        \item $\phi(ab) = \phi(a)\phi(b)$.
+        \bigskip
+
+        \item $\phi(p^k) = p^{k}-p^{k-1}$.
+        \bigskip
+
+        \item $\ds \phi(n) = n \prod_{p\mid n}\paren{1 - \frac{1}{p}}$.
+    \end{itemize}
+\end{proposition}
+\end{frame}
+
+
+\begin{frame}{Función totiente de Euler}
+  \begin{theorem}[Euler]
+    Si $\mcd(a,n)=1$ entonces
+    \[
+        a^{\phi(n)} \eqv 1 \pmod{n}.
+    \]
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}
+  \begin{center}\fontsize{20}{24}\selectfont
+    ¿Como se comporta $\Z_m^\times$?
+  \end{center}
+\end{frame}
+
+\begin{frame}{La estructura de $\Z_m^\times$}
+  \begin{theorem}
+    Sea $\Phi(m) = \Z_m^\times$ y $m = p_1^{a_1} \cdots p_r^{a_r}$ entonces
+    \[
+        \Phi(m) \cong \Phi(p_1^{a_1}) \times \cdots \times \Phi(p_r^{a_r}).
+    \]
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{La estructura de $\Z_m^\times$}
+  \begin{definition}
+    Sea $\mcd(a,m)=1$ Llamaremos el orden módulo $m$ de $a$ como el menor $l$ tal que
+    \[
+        a^l \eqv 1 \pmod{m}.
+    \]
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}{La estructura de $\Z_m^\times$}
+  \begin{theorem}
+    Sea $p>2$ un primo, entonces existe un elemento $g \in \Z$ (no necesariamente único) tal que
+    \[
+        \Phi(p^k) = \inner{ g } = \{ [1]_p,  [g]_p, [g^2]_p, \ldots \} .
+    \]
+    \pause
+    Además el orden módulo $p^k$ de $g$ es $\phi(p^k) = p^k - p^{k-1}$. Es decir
+    \[
+        \Phi(p^k) \cong \Z_{p^k - p^{k-1}}.
+    \]
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}{La estructura de $\Z_m^\times$}
+  \begin{theorem}
+    En el caso de $2$ se tiene que
+    \pause
+    \begin{itemize}[<+->]
+        \item $\Phi(2) = \inner{1}$ y $1$ tiene orden $1$ módulo $2$.
+        \item $\Phi(4) = \inner{3}$ y $3$ tiene orden $2$ módulo $4$.
+        \item Para $k\geq 3$ se tiene que $\Phi(2^k) = \inner{-1} \times \inner{5}$ y $5$ tiene orden $2^{k-2}$ módulo $p^k$.
+    \end{itemize}
+    \pause
+    Resumiendo tenemos que
+    \begin{align*}
+        \Phi(2^k) \cong \begin{cases}
+            \Z_1 & k=1 \\
+            \Z_2 & k=2 \\
+            \Z_2 \times \Z_{2^{k-1}} & k\geq 3.
+        \end{cases}
+    \end{align*}
+\end{theorem}
+\end{frame}

@@ -14,3 +14,6 @@
 *.snm
 *.synctex.gz
 *.toc
+*.bbl
+*.blg
+*.jpg

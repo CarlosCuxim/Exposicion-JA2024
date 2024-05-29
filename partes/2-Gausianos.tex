@@ -1,0 +1,80 @@
+\begin{frame}
+  \begin{center}\fontsize{20}{24}\selectfont
+    ¿Por que deberíamos generalizar a los enteros?
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Teorema de Fermat sobre la suma de dos cuadrados}
+  Los primeros primos que pueden ser escritos como la suma de dos cuadrados son
+  \begin{align*}
+    2 &= 1 + 1, &
+    5 &= 1 + 2^2, &
+    13 &= 2^2 + 3^2, \\
+    17 &= 1 + 4^2 &
+    29 &= 2^2 + 5^2 &
+    37 &= 1 + 6^2.
+  \end{align*}
+
+  \pause\bigskip
+  Todos, excepto el 2, es de la forma $4k + 1$.
+\end{frame}
+
+\begin{frame}{Teorema de Fermat sobre la suma de dos cuadrados}
+  \begin{theorem}[Fermat]
+    Para todos los primos $p \neq 2$ se cumple que 
+    \[
+      p = a^2 + b^2 \iff p = 4k + 1.
+    \]
+  \end{theorem}
+
+  \pause\bigskip
+  Notemos que si $p = a^2 + b^2$, entonces se debe cumplir que
+  \[
+    p = (a + ib)(a - ib)
+  \]
+  donde $i = \sqrt{-1}$.
+\end{frame}
+
+\begin{frame}{Enteros Gausianos}
+  \begin{definition}
+    Llamamos al conjunto $\Z[i] = \{a + bi : a,b \in \Z\}$ los \emph{enteros gausianos}.
+  \end{definition}
+
+  \pause\bigskip
+
+  \begin{theorem}
+    Los enteros gausianos son un dominio euclideano considerando la siguiente función 
+    \[
+      N(a + bi) = a^2 + b^2.
+    \]
+  \end{theorem}
+\end{frame}
+
+
+
+\begin{frame}{Enteros Gausianos}
+  \begin{theorem}
+    Las unidades en $\Z[i]$ son $\Z[i]^\times = \{1, i, -1, -1\}$.
+  \end{theorem}
+
+  \begin{theorem}
+    Los elementos primos en $\Z[i]$ están dados (salvo multiplicación por una unidad) por
+    \begin{enumerate}
+      \item $ \pi = 1 + i$.
+      \item $ \pi = a + bi$ donde 
+      \[
+        a^2 + b^2 = p, \qquad p = 4k+1 \Eqand a > \abs{b} > 0.
+      \]
+      \item $\pi = p$ donde $p = 4k + 3$.
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{Teorema de Fermat sobre la suma de dos cuadrados}
+  Así $p$ es de la forma $p = a^2 + b^2$ \pause si y solo si $p$ se factoriza en $\Z[i]$ como
+  \[
+    p = (a+bi)(a-bi),
+  \]
+  \pause que se cumple si y solo si $p$ no es primo en $\Z[i]$, \pause que, por el teorema anterior, es si y solo si $p = 4k+1$.
+\end{frame}

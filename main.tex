@@ -1,4 +1,4 @@
-\documentclass[notheorems, handout, xcolor=table]{beamer}
+\documentclass[notheorems, xcolor=table, aspectratio=169]{beamer}
   \mode<presentation>
 
 
@@ -27,7 +27,7 @@
 
 \usepackage{biblatex}
 \usepackage{csquotes}
-    \addbibresource{bib.bib}
+    \addbibresource{bibliography.bib}
 
 
     
@@ -49,5 +49,25 @@
 \begin{document}
   \frame{\titlepage}
 
+
+  \input{partes/1-Enteros}
+
+  \input{partes/2-Gausianos}
+
+  \input{partes/3-Generalizando}
+
+  \input{partes/4-Integridad}
+
+  \input{partes/5-Cuadraticos}
+
+  \input{partes/6-Totiente}
+
+  \input{partes/7-TotienteCuadratico}
   
+  \nocite{*}
+
+  \begin{frame}[allowframebreaks]{Referencias}
+    \printbibliography
+  \end{frame}
+
 \end{document}
